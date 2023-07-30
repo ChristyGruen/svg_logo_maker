@@ -89,7 +89,8 @@ out
 
 # Nuxt.js build / generate output
 .nuxt
-dist
+# dist commented out per homework instructions
+# dist
 
 # Gatsby files
 .cache/
@@ -98,7 +99,8 @@ dist
 # public
 
 # vuepress build output
-.vuepress/dist
+# dist commented out per homework instructions
+# .vuepress/dist
 
 # vuepress v2.x temp and cache directory
 .temp
