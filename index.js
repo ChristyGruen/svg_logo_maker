@@ -17,7 +17,8 @@ inquirer
   {type: 'input', message:'Enter up to three characters', name: 'inputText', default:'BOB'},
   {type: 'input', message:'Enter a color for the text using a color keyword or hexadecimal number', name: 'inputTextColor',default: 'white'},
   {type: 'list', message:"Choose a shape from the provided list", choices: ['circle', 'triangle', 'square'], name:'inputShape', default:0},
-  {type: 'input', message:'Enter a color to fill the shape using a color keyword or hexadecimal number', name: 'inputShapeColor', default:'black'}
+  {type: 'input', message:'Enter a color to fill the shape using a color keyword or hexadecimal number', name: 'inputShapeColor', default:'black'},
+  {type: 'input', message:'Enter a filename for your logo (optional)', name: 'inputFileName', default:'logo'}
 ]
 )
 .then((response)=>{
@@ -46,7 +47,7 @@ function createIcon(response){
     //filecounter reverts to 0 each time, use local storage to save, or use datetime stamp in name, other ideas? use input variables to create name?
     // console.log(fileCounter)
     // let fileName = `logo${fileCounter}.svg`
-    let fileName = `logo.svg`
+    let fileName = `${response.inputFileName}.svg`
     fs.writeFile(fileName, pineapple,(err) => err ? console.error(err): console.log(`Generated ${fileName}`))
     // fileCounter = fileCounter +1
 
@@ -63,7 +64,7 @@ function createIcon(response){
         //filecounter reverts to 0 each time, use local storage to save, or use datetime stamp in name, other ideas? use input variables to create name?
         // console.log(fileCounter)
         // let fileName = `logo${fileCounter}.svg`
-        let fileName = `logo.svg`
+        let fileName = `${response.inputFileName}.svg`
         fs.writeFile(fileName, pineapple,(err) => err ? console.error(err): console.log(`Generated ${fileName}`))
         // fileCounter = fileCounter +1
   } else if (response.inputShape == 'triangle'){
@@ -79,7 +80,7 @@ function createIcon(response){
         //filecounter reverts to 0 each time, use local storage to save, or use datetime stamp in name, other ideas? use input variables to create name?
         // console.log(fileCounter)
         // let fileName = `logo${fileCounter}.svg`
-        let fileName = `logo.svg`
+        let fileName = `${response.inputFileName}.svg`
         fs.writeFile(fileName, pineapple,(err) => err ? console.error(err): console.log(`Generated ${fileName}`))
         // fileCounter = fileCounter +1
   } else{
