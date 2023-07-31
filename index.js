@@ -15,9 +15,9 @@ function start(){
 inquirer
 .prompt([
   {type: 'input', message:'Enter up to three characters', name: 'inputText', default:'BOB'},
-  {type: 'input', message:'Enter a color for the text using a color keyword or hexadecimal number', name: 'inputTextColor',default: 'white'},
+  {type: 'input', message:'Enter a color for the text using a color keyword or hexadecimal number', name: 'inputTextColor',default: '#31541f'},
   {type: 'list', message:"Choose a shape from the provided list", choices: ['circle', 'triangle', 'square'], name:'inputShape', default:0},
-  {type: 'input', message:'Enter a color to fill the shape using a color keyword or hexadecimal number', name: 'inputShapeColor', default:'black'},
+  {type: 'input', message:'Enter a color to fill the shape using a color keyword or hexadecimal number', name: 'inputShapeColor', default:'#99ff33'},
   {type: 'input', message:'Enter a filename for your logo (optional)', name: 'inputFileName', default:'logo'}
 ]
 )
@@ -39,8 +39,8 @@ function createIcon(response){
     console.log(`you picked a ${response.inputShapeColor} ${response.inputShape} with ${response.inputTextColor} ${response.inputText} initials - circle`)
     //get svg file contents text to uppercase
     let circley = new Circle(response.inputTextColor,response.inputText.toUpperCase(),response.inputShapeColor)
-    let pineapple = circley.createSVGContent()
-    console.log(pineapple)
+    let wipLogo = circley.render()
+    console.log(wipLogo)
 
   
     // //write file
@@ -48,7 +48,7 @@ function createIcon(response){
     // console.log(fileCounter)
     // let fileName = `logo${fileCounter}.svg`
     let fileName = `${response.inputFileName}.svg`
-    fs.writeFile(fileName, pineapple,(err) => err ? console.error(err): console.log(`Generated ${fileName}`))
+    fs.writeFile(fileName, wipLogo,(err) => err ? console.error(err): console.log(`Generated ${fileName}`))
     // fileCounter = fileCounter +1
 
   } else if (response.inputShape == 'square'){
@@ -56,8 +56,8 @@ function createIcon(response){
     console.log(`you picked a ${response.inputShapeColor} ${response.inputShape} with ${response.inputTextColor} ${response.inputText} initials - square`)
         //get svg file contents, text to uppercase
         let squarey = new Square(response.inputTextColor,response.inputText.toUpperCase(),response.inputShapeColor)
-        let pineapple = squarey.createSVGContent()
-        console.log(pineapple)
+        let wipLogo = squarey.render()
+        console.log(wipLogo)
     
       
         // //write file
@@ -65,15 +65,15 @@ function createIcon(response){
         // console.log(fileCounter)
         // let fileName = `logo${fileCounter}.svg`
         let fileName = `${response.inputFileName}.svg`
-        fs.writeFile(fileName, pineapple,(err) => err ? console.error(err): console.log(`Generated ${fileName}`))
+        fs.writeFile(fileName, wipLogo,(err) => err ? console.error(err): console.log(`Generated ${fileName}`))
         // fileCounter = fileCounter +1
   } else if (response.inputShape == 'triangle'){
     //do triangle stuff
     console.log(`you picked a ${response.inputShapeColor} ${response.inputShape} with ${response.inputTextColor} ${response.inputText} initials - triangle`)
         //get svg file contents text to uppercase
         let triangely = new Triangle(response.inputTextColor,response.inputText.toUpperCase(),response.inputShapeColor)
-        let pineapple = triangely.createSVGContent()
-        console.log(pineapple)
+        let wipLogo = triangely.render()
+        console.log(wipLogo)
     
       
         // //write file
@@ -81,7 +81,7 @@ function createIcon(response){
         // console.log(fileCounter)
         // let fileName = `logo${fileCounter}.svg`
         let fileName = `${response.inputFileName}.svg`
-        fs.writeFile(fileName, pineapple,(err) => err ? console.error(err): console.log(`Generated ${fileName}`))
+        fs.writeFile(fileName, wipLogo,(err) => err ? console.error(err): console.log(`Generated ${fileName}`))
         // fileCounter = fileCounter +1
   } else{
     console.log('what happened?')
