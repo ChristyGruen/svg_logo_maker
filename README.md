@@ -27,8 +27,8 @@
   ## Usage
   
       To run the app, follow the installation instructions above, then type node index.js in the terminal and enter. Answer the questions posed in the terminal.  Once all the questions are answered, an SVG file will be generated in the root directory of the project.
-  Watch a demo of the app here:  TBD
-  <!-- <https://watch.screencastify.com/v/LGnvXAt6R6cMVc3untRV> -->
+  Watch a demo of the app here:
+  <https://watch.screencastify.com/v/TcFIeYgSiHU3aQ1aZHFE>
   
   ## License
     This project is covered under the MIT license.
